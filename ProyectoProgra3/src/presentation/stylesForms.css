@@ -1,0 +1,42 @@
+.root {
+	 -fx-background-color: #f4f4f4;
+	 -fx-border-width:16px;
+	 -fx-background-color: white;
+     -fx-border-color: rgb(142, 209, 238);
+	 -fx-padding: 8px;
+	 -fx-font-family: 'Roboto', sans-serif;
+}
+
+.label {
+	 -fx-text-fill: #333333;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #3b5998;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+  
+}
+
+.button {
+   -fx-background-color: #3b5998; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-color:rgb(11, 47, 123);
+}
+
+.button:hover {
+    -fx-background-color: #3e8e41;
+}
+
+.combo-box{
+	-fx-background-color: white;
+    -fx-border-color: #3b5998;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+
+

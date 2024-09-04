@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="576.0" stylesheets="@styleTV.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.GUIConsultBalanceController">
+	<children>
+		<Label layoutX="15.0" layoutY="14.0" text="Consultar saldo">
+			<font>
+				<Font name="System Bold" size="13.0" />
+			</font>
+		</Label>
+		<TextField fx:id="tfConsultBalance" layoutX="15.0" layoutY="33.0" prefHeight="26.0" prefWidth="427.0" promptText="Ingrese el carnet del estudiante" />
+		<Button fx:id="btnConsultBalance" layoutX="451.0" layoutY="33.0" mnemonicParsing="false" onAction="#consultStudentBalance" prefHeight="26.0" prefWidth="106.0" text="Consultar Saldo">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+		</Button>
+		<TableView fx:id="tvShowStudentBalance" layoutX="15.0" layoutY="73.0" prefHeight="230.0" prefWidth="545.0">
+			<columns>
+				<TableColumn fx:id="tvColumnCarnet" prefWidth="82.39996147155762" text="Carnet" />
+				<TableColumn fx:id="tvColumnStudent" prefWidth="236.00000762939453" text="Estudiante" />
+				<TableColumn fx:id="tvColumnReloadDate" minWidth="0.0" prefWidth="131.20001220703125" text="Fecha de recarga" />
+				<TableColumn fx:id="tvColumnBalance" prefWidth="92.0001220703125" text="Saldo" />
+			</columns>
+		</TableView>
+		<Button fx:id="btnReturnToHome" layoutX="288.0" layoutY="313.0" mnemonicParsing="false" onAction="#returnHome" text="Regresar" />
+		<Button fx:id="btnAddNewStudent" layoutX="403.0" layoutY="313.0" mnemonicParsing="false" onAction="#addNewStudent" text="Agregar nuevo estudiante" />
+      <Label fx:id="labelAlert" layoutX="33.0" layoutY="317.0" textFill="RED" />
+	</children>
+</AnchorPane>

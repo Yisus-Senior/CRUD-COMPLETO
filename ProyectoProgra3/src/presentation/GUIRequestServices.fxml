@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="628.0" stylesheets="@styleTV.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.GUIRequestServicesController">
+	<children>
+		<Label layoutX="29.0" layoutY="37.0" text="Estudiante" />
+		<ComboBox fx:id="cbStudent" editable="true" layoutX="26.0" layoutY="55.0" prefHeight="25.0" prefWidth="175.0" promptText="Seleccione un estudiante" />
+		<Label layoutX="218.0" layoutY="37.0" text="Dia de reserva" />
+		<ComboBox fx:id="cbReservationDay" editable="true" layoutX="218.0" layoutY="55.0" onAction="#cbReservationDayIsSelected" prefHeight="25.0" prefWidth="207.0" promptText="Seleccione el dia para reservar" />
+		<Label layoutX="466.0" layoutY="37.0" text="Horario de reservación" />
+		<RadioButton fx:id="rbBreakfast" layoutX="452.0" layoutY="58.0" mnemonicParsing="false" onAction="#rbBreakfastIsSelected" selected="true" text="Desayuno">
+			<toggleGroup>
+				<ToggleGroup fx:id="reservationSchedule" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="rbLunch" layoutX="535.0" layoutY="58.0" mnemonicParsing="false" onAction="#rbLunchIsSelected" text="Almuerzo" toggleGroup="$reservationSchedule" />
+		<TableView fx:id="tableViewFood" layoutX="22.0" layoutY="97.0" prefHeight="228.0" prefWidth="585.0">
+			<columns>
+				<TableColumn fx:id="columnFood" prefWidth="435.9999694824219" text="Alimento" />
+				<TableColumn fx:id="columnPrice" prefWidth="79.3333740234375" text="Precio" />
+				<TableColumn fx:id="columnRequest" prefWidth="68.66665649414062" text="Solicitar" />
+			</columns>
+		</TableView>
+		<Button fx:id="btnBack" layoutX="24.0" layoutY="372.0" mnemonicParsing="false" onAction="#returnToHome" text="Regresar" />
+		<Button fx:id="btnAddNewFood" layoutX="462.0" layoutY="372.0" mnemonicParsing="false" onAction="#addNewFood" text="Agregar nuevo alimento" />
+		<Label fx:id="lMessageErrors" layoutX="114.0" layoutY="325.0" prefHeight="51.0" prefWidth="326.0" textFill="RED" />
+		<Button fx:id="btnBuyFood" layoutX="494.0" layoutY="325.0" mnemonicParsing="false" onAction="#buyFood" text="Comprar comida" />
+	</children>
+</Pane>

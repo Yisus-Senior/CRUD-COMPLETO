@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="400.0" stylesheets="@styleMenuHome.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.GUIMenuHomeController">
+	<children>
+		<MenuBar fx:id="mbarSodaU" prefHeight="26.0" prefWidth="400.0">
+			<menus>
+				<Menu fx:id="menuStudent" mnemonicParsing="false" text="Estudiante">
+					<items>
+						<MenuItem fx:id="mItemConsultBalance" mnemonicParsing="false" onAction="#consultBalance" text="Consultar saldo" />
+						<MenuItem fx:id="mItemAddStudent" mnemonicParsing="false" onAction="#addStudent" text="Agregar estudiante" />
+						<MenuItem fx:id="mItemMakeRecharge" mnemonicParsing="false" onAction="#makeRecharge" text="Realizar Recarga" />
+					</items>
+				</Menu>
+				<Menu fx:id="menuSoda" mnemonicParsing="false" text="Soda">
+					<items>
+						<MenuItem fx:id="mItemAddFood" mnemonicParsing="false" onAction="#addFood" text="Agregar comida" />
+					</items>
+				</Menu>
+				<Menu fx:id="menuService" mnemonicParsing="false" text="Servicio">
+					<items>
+						<MenuItem fx:id="mItemRequestService" mnemonicParsing="false" onAction="#requestService" text="Solicitar servicio" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<Label layoutX="79.0" layoutY="54.0" prefHeight="34.0" prefWidth="242.0" text="Soda Universidad Nacional">
+			<font>
+				<Font name="Times New Roman Bold" size="20.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>

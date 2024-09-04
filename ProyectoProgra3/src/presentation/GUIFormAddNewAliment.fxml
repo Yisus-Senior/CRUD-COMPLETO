@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="446.0" stylesheets="@stylesForms.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.GUIFormAddNewAlimentController">
+	<children>
+		<Button fx:id="btnReturnHome" layoutX="250.0" layoutY="314.0" mnemonicParsing="false" onAction="#returnToHome" text="Regresar" wrapText="true">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+		</Button>
+		<TextField fx:id="tfPriceOfService" layoutX="30.0" layoutY="268.0" prefHeight="26.0" prefWidth="388.0" promptText="Precio #" />
+		<TextField fx:id="tfNameOfService" layoutX="29.0" layoutY="205.0" prefHeight="26.0" prefWidth="388.0" promptText="Nombre" />
+		<ComboBox fx:id="cbSelectServiceDay" layoutX="29.0" layoutY="139.0" prefHeight="26.0" prefWidth="388.0" promptText="Seleccione el dia" />
+		<RadioButton fx:id="rbServiceScheduleBreakfast" layoutX="29.0" layoutY="72.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="83.0" selected="true" text="Desayuno">
+			<toggleGroup>
+				<ToggleGroup fx:id="serviceSchedule" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="rbServiceScheduleLunch" layoutX="160.0" layoutY="72.0" mnemonicParsing="false" text="Almuerzo" toggleGroup="$serviceSchedule" />
+		<Label alignment="CENTER" layoutX="-2.0" layoutY="-4.0" prefHeight="38.0" prefWidth="452.0" style="-fx-background-color: rgb(65, 169, 213);" text="Formulario para registrar nuevo alimento" wrapText="true">
+			<font>
+				<Font name="System Bold" size="18.0" />
+			</font>
+		</Label>
+		<Label layoutX="29.0" layoutY="45.0" text="Horario de servicio :">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</Label>
+		<Label layoutX="29.0" layoutY="109.0" text="Dia que aplica  el servicio :">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</Label>
+		<Label layoutX="30.0" layoutY="187.0" text="*Nombre del servicio" textFill="#974dab" />
+		<Label layoutX="30.0" layoutY="250.0" stylesheets="@stylesForms.css" text="*Precio del servicio" textFill="#974dab" />
+		<Button fx:id="btnSaveDataService" layoutX="354.0" layoutY="314.0" mnemonicParsing="false" onAction="#saveDataService" text="Guardar" wrapText="true">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+		</Button>
+		<Label fx:id="lMessageErrors" layoutX="30.0" layoutY="306.0" prefHeight="44.0" prefWidth="206.0" textFill="#ed3600" wrapText="true" />
+	</children>
+</AnchorPane>
