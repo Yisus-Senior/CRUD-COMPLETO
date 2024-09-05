@@ -1,8 +1,8 @@
 .root {
-		-fx-border-color: rgb(109, 116, 126);
+		-fx-border-color:#980404;
 	    -fx-border-width:15px;
 	    -fx-padding: 8px;
-		-fx-background-color:rgb(159, 166, 176);
+		-fx-background-color:#980404;
 }
 
 .button:hover {
