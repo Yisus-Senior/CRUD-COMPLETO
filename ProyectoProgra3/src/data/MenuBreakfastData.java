@@ -9,11 +9,11 @@ import domain.Menus;
 public class MenuBreakfastData {
 	public static Menus menuTemp;
 	
-	public static List<Menus> menuListMondayBreakfast = new ArrayList<Menus>();
-	public static List<Menus> menuListTuesdayBreakfast = new ArrayList<Menus>();
-	public static List<Menus> menuListWednesdayBreakfast = new ArrayList<Menus>();
-	public static List<Menus> menuListThursdayBreakfast = new ArrayList<Menus>();
-	public static List<Menus> menuListFridayBreakfast = new ArrayList<Menus>();
+//	public static List<Menus> menuListMondayBreakfast = new ArrayList<Menus>();
+//	public static List<Menus> menuListTuesdayBreakfast = new ArrayList<Menus>();
+//	public static List<Menus> menuListWednesdayBreakfast = new ArrayList<Menus>();
+//	public static List<Menus> menuListThursdayBreakfast = new ArrayList<Menus>();
+//	public static List<Menus> menuListFridayBreakfast = new ArrayList<Menus>();
 	
 	public static final String fileNameMondayBreakfast = "monday_breakfast.json";
 	public static final String fileNameTuesdayBreakfast = "tuesday_breakfast.json";
@@ -57,9 +57,16 @@ public class MenuBreakfastData {
 	
 	}
 	
-//	public static List<Menus> getMenu(int index){
-//		
-//	}
-//	
+	public static boolean removeMenu(Menus menuToRemove,String filePath) {
+		try {
+			jsonUtils.removeElement(menuToRemove, filePath);
+			return true;
+		}catch(IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+
 	
 }

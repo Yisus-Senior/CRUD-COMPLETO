@@ -47,9 +47,10 @@ public class JsonUtils<T> {
 	
 	public void removeElement(T t,String filePath) throws IOException {
 		List<T> objects = getElement((Class<T>) t.getClass(),filePath);
+		System.out.println("FAJKOWEHFIUJHAWE");
 		
 		for( int i = 0;i<objects.size();i++) {
-			if(t.equals(objects.get(i))) {
+			if(objects.get(i).equals(t)) {
 				objects.remove(i);
 				break;
 			}

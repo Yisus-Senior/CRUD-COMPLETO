@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -16,6 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.swing.JOptionPane;
 
 import data.MenuBreakfastData;
 import data.MenuLunchData;
@@ -70,6 +72,62 @@ public class GUIRequestServicesController {
 	@FXML
 	private Button btnBuyFood;
 
+	@FXML
+	public void editFood(MouseEvent event) {
+		String[] a = {"Comprar","Editar","Eliminar"};
+		int op = JOptionPane.showOptionDialog(null,
+				"Comida","Selecciono una comida", 
+				JOptionPane.DEFAULT_OPTION,
+				JOptionPane.INFORMATION_MESSAGE,
+				null,
+				a,
+				0);
+			
+		switch(op) {
+		case 0 : buyFood();
+		break;
+		case 1: updateFood();
+		break ;
+		case 2: removeFood();
+		System.out.println("pasa awui");
+		break;
+		
+		default:
+		}
+	}
+	
+	private void removeFood() {
+		
+		LogicMenus.removeAliments(tableViewFood.getSelectionModel().getSelectedItem(),
+				(byte) cbReservationDay.getSelectionModel().getSelectedIndex(),
+				rbBreakfast.isSelected());
+		tableViewFood.refresh();
+	}
+
+	private void updateFood() {
+		 try {
+				
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/presentation/GUIFormAddNewAliment.fxml"));
+				
+				Parent root = loader.load();
+				
+				GUIFormAddNewAlimentController controller = loader.getController();
+				
+				controller.setUpdateMenu(tableViewFood.getSelectionModel().getSelectedItem(),(byte) cbReservationDay.getSelectionModel().getSelectedIndex(),rbBreakfast.isSelected());
+				Scene scene = new Scene(root);
+				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); sino lo configuro se nececita agregar aqui
+				Stage stage = new Stage();
+				stage.setScene(scene);
+				stage.show();
+				Stage temp = (Stage)btnBack.getScene().getWindow();
+				temp.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}	
+		
+		
+	}
+
 	public void rbBreakfastIsSelected(ActionEvent event) {
 		setAlimentsTV();
 	}
@@ -86,14 +144,12 @@ public class GUIRequestServicesController {
 		
 	}
 	
-	// Event Listener on Button[#btnBack].onAction
 	@FXML
 	public void returnToHome(ActionEvent event) {
 		closeWindows();
 	}
-	// Event Listener on Button[#btnAddNewFood].onAction
-	@FXML
-	public void buyFood(ActionEvent event) {
+	
+	public void buyFood() {
 		
 		if(tableViewFood.getSelectionModel().getSelectedItem()!=null) {
 			Menus menu = tableViewFood.getSelectionModel().getSelectedItem();
@@ -144,12 +200,6 @@ public class GUIRequestServicesController {
 	}
 	
 	private void setStudents() {
-//		cbStudent.getItems().addAll(
-//		    StudentsData.getStudentsList().stream() // cambiar esto ,sirve, pero mejor quitar
-//		        .map(Student::getCarnet)
-//		        .collect(Collectors.toList())
-//		);
-//		
 		for(Student s : StudentsData.getStudentsList()) {
 			cbStudent.getItems().add(s.getCarnet());
 		}

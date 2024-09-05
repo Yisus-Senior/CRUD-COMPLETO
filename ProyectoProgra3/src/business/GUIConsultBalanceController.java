@@ -114,7 +114,7 @@ public class GUIConsultBalanceController {
 			Stage stage = new Stage();
 			stage.setScene(scene);
 			stage.show();
-			Stage temp = (Stage)btnReturnToHome.getScene().getWindow();
+			Stage temp = (Stage) btnReturnToHome.getScene().getWindow();
 			temp.close();
 		} catch(Exception e) {
 			e.printStackTrace();

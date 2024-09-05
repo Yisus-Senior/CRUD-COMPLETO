@@ -61,7 +61,7 @@ public class LogicMenus {
 	}
 	
 	
-	public static boolean setAliments(Menus menu,int index,boolean schedule) {
+	public static boolean setAliments(Menus menu,byte index,boolean schedule) {
 		switch (index) {
 		
 		case 0:	
@@ -98,6 +98,52 @@ public class LogicMenus {
 				MenuBreakfastData.saveMenu(menu,MenuBreakfastData.fileNameFridayBreakfast);
 			}else{
 				MenuLunchData.saveMenu(menu,MenuLunchData.fileNameFridayLunch);
+				}
+			break;
+			
+		default:
+			return false;
+		}
+		return true;
+	}
+	
+	public static boolean removeAliments(Menus menu,byte index,boolean schedule) {
+		switch (index) {
+		
+		case 0:	
+			if(schedule) {
+				MenuBreakfastData.removeMenu(menu,MenuBreakfastData.fileNameMondayBreakfast);
+			}else{
+				MenuLunchData.removeMenu(menu,MenuLunchData.fileNameMondayLunch);
+				}
+		
+			break; 
+		case 1:
+			if(schedule) {
+				MenuBreakfastData.removeMenu(menu,MenuBreakfastData.fileNameTuesdayBreakfast);
+			}else{
+				MenuLunchData.removeMenu(menu,MenuLunchData.fileNameTuesdayLunch);
+				}
+			break;
+		case 2:
+			if(schedule) {
+				MenuBreakfastData.removeMenu(menu,MenuBreakfastData.fileNameWednesdayBreakfast);
+			}else{
+				MenuLunchData.removeMenu(menu,MenuLunchData.fileNameWednesdayLunch);
+				}
+			break;
+		case 3:
+			if(schedule) {
+				MenuBreakfastData.removeMenu(menu,MenuBreakfastData.fileNameThurdsdayBreakfast);
+			}else{
+				MenuLunchData.removeMenu(menu,MenuLunchData.fileNameThurdsdayLunch);
+				}
+			break;
+		case 4:
+			if(schedule) {
+				MenuBreakfastData.removeMenu(menu,MenuBreakfastData.fileNameFridayBreakfast);
+			}else{
+				MenuLunchData.removeMenu(menu,MenuLunchData.fileNameFridayLunch);
 				}
 			break;
 			

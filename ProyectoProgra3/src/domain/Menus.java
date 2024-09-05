@@ -1,6 +1,8 @@
 package domain;
 
 
+import java.util.Objects;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -43,6 +45,23 @@ public class Menus {
 	@Override
 	public String toString() {
 		return "Menus [namePlate=" + namePlate + ", price=" + price + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(namePlate, price);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Menus other = (Menus) obj;
+		return Objects.equals(namePlate, other.namePlate) && price == other.price;
 	}
 
 	

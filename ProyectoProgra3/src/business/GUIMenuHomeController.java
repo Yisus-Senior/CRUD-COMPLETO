@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 
+import domain.Menus;
 import javafx.event.ActionEvent;
 
 import javafx.scene.control.MenuBar;
@@ -35,6 +36,7 @@ public class GUIMenuHomeController {
 	@FXML
 	private MenuItem mItemMakeRecharge;
 
+	private static Menus menuTemp; 
 	// Event Listener on MenuItem[#mItemConsultBalance].onAction
 	@FXML
 	public void consultBalance(ActionEvent event) {
@@ -140,4 +142,5 @@ public class GUIMenuHomeController {
 				//e.printStackTrace();
 			}
 	}
+	
 }
