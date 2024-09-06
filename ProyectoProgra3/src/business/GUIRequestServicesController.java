@@ -45,6 +45,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 
 public class GUIRequestServicesController {
+	
 	@FXML
 	private ComboBox<Object> cbStudent;
 	@FXML
@@ -115,7 +116,6 @@ public class GUIRequestServicesController {
 				
 				controller.setUpdateMenu(tableViewFood.getSelectionModel().getSelectedItem(),(byte) cbReservationDay.getSelectionModel().getSelectedIndex(),rbBreakfast.isSelected());
 				Scene scene = new Scene(root);
-				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); sino lo configuro se nececita agregar aqui
 				Stage stage = new Stage();
 				stage.setScene(scene);
 				stage.show();
@@ -171,7 +171,6 @@ public class GUIRequestServicesController {
 			
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); sino lo configuro se nececita agregar aqui
 			Stage stage = new Stage();
 			stage.setScene(scene);
 			stage.show();
@@ -235,7 +234,6 @@ try {
 			
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); //sino lo configuro se nececita agregar aqui
 			Stage stage = new Stage();
 			stage.setScene(scene);
 			stage.show();
